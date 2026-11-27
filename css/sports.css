@@ -200,4 +200,20 @@
         font-size: 38px;
     }
 
+@media (max-width: 600px) {
+    .sports-gallery-grid {
+        columns: 2;
+        column-count: 2;
+        column-gap: 12px;
+    }
+
+    .sports-gallery-grid img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+    }
+
+    .sports-gallery {
+        padding: 40px 5%;
+    }
 }
