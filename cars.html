@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Photography | Jonah Cox</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cars.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/jonah-cox-logo.png" alt="Jonah Cox Photography">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cars-hero">
+        <h1>CAR PHOTOGRAPHY</h1>
+    </section>
+
+    <section class="cars-gallery">
+        <div class="cars-gallery-grid">
+            <img src="images/cars/cars-2.jpg" alt="Car photograph">
+            <img src="images/cars/cars-3.jpg" alt="Car photograph">
+            <img src="images/cars/cars-4.jpg" alt="Car photograph">
+            <img src="images/cars/cars-5.jpg" alt="Car photograph">
+            <img src="images/cars/cars-6.jpg" alt="Car photograph">
+            <img src="images/cars/cars-7.jpg" alt="Car photograph">
+            <img src="images/cars/cars-8.jpg" alt="Car photograph">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT ME</a>
+                <a href="portfolio.html">PORTFOLIO</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Jonah Cox Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+        <img src="" alt="" id="lightbox-image">
+    </div>
+
+    <script>
+        const galleryImages = document.querySelectorAll(".cars-gallery-grid img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightbox-image");
+        const closeButton = document.getElementById("lightbox-close");
+
+        galleryImages.forEach(image => {
+            image.addEventListener("click", () => {
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove("active");
+            document.body.style.overflow = "";
+            lightboxImage.src = "";
+        }
+
+        closeButton.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", event => {
+            if (event.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") closeLightbox();
+        });
+    </script>
+
+</body>
+</html>
