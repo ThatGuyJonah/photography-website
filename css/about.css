@@ -1,0 +1,115 @@
+/* =========================
+   ABOUT HERO
+========================= */
+
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    height: 85svh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background-image: url("../images/hero/about-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.about-hero h1 {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(42px, 7vw, 75px);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+
+/* =========================
+   ABOUT INTRODUCTION
+========================= */
+
+.about-introduction {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 75px;
+    padding: 100px 10%;
+    background-color: var(--background);
+}
+
+.about-camera-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: #deded8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 4vw, 43px);
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--text);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        height: 55vh;
+        height: 55svh;
+        min-height: 350px;
+    }
+
+    .about-introduction {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 65px 6%;
+    }
+
+    .about-camera-placeholder {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+}

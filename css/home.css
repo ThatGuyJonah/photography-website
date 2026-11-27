@@ -1,0 +1,295 @@
+
+/* =========================
+   HOMEPAGE HERO
+========================= */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Dark gradient behind navigation */
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        transparent
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+/* =========================
+   HOMEPAGE LINKS
+========================= */
+
+.home-links {
+    padding: 100px 6%;
+    background-color: var(--background);
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-heading h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   PORTFOLIO CATEGORIES
+========================= */
+
+.portfolio-categories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.portfolio-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    overflow: hidden;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+/* Individual cover photographs */
+
+.wildlife-card {
+    background-image: url("../images/portfolio-covers/wildlife-nature.jpg");
+}
+
+.sports-card {
+    background-image: url("../images/portfolio-covers/sports-photography.jpg");
+}
+
+.cars-card {
+    background-image: url("../images/portfolio-covers/car-photography.jpg");
+}
+
+
+/* Dark overlay */
+
+.portfolio-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+    transition: background 0.4s ease;
+}
+
+.portfolio-card:hover::before {
+    background: rgba(0, 0, 0, 0.55);
+}
+
+
+/* Text and arrow */
+
+.portfolio-card-content {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card-content h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-arrow {
+    display: inline-block;
+    font-size: 28px;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-card-content {
+    transform: translateY(-5px);
+}
+
+.portfolio-card:hover .card-arrow {
+    transform: translateY(7px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .portfolio-categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portfolio-card {
+        min-height: 350px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .home-links {
+        padding: 65px 5%;
+    }
+
+    .section-heading h1 {
+        font-size: 32px;
+    }
+
+    .portfolio-categories {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .portfolio-card {
+        min-height: 400px;
+    }
+
+    .portfolio-card-content h2 {
+        font-size: 23px;
+    }
+
+}
+
+/* INSTAGRAM SECTION */
+
+.instagram-section {
+    width: 100%;
+    background-color: #000000;
+}
+
+.instagram-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #000000;
+}
+
+.instagram-link:hover {
+    background-color: #000000;
+}
+
+.instagram-icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 15px;
+    background-image: url("https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/instagram.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: invert(1);
+}
+
+.instagram-link h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.instagram-link p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        height: 100svh;
+        min-height: 500px;
+    }
+
+    .hero::before {
+        height: 180px;
+    }
+
+    .home-links {
+        padding: 65px 6%;
+    }
+
+    .home-links h1 {
+        font-size: 32px;
+    }
+
+}
+
+.home-contact {
+    background-color: var(--background);
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.home-contact p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.home-contact a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home-contact a:hover {
+    color: var(--muted);
+}
