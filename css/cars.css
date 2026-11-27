@@ -160,4 +160,22 @@
         right: 20px;
         font-size: 38px;
     }
+
+@media (max-width: 600px) {
+    .cars-gallery-grid {
+        columns: 2;
+        column-count: 2;
+        column-gap: 12px;
+    }
+
+    .cars-gallery-grid img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+    }
+
+    .cars-gallery {
+        padding: 40px 5%;
+    }
+
 }
